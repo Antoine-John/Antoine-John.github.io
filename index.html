@@ -30,9 +30,28 @@
 	</noscript>
 	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 </head>
-<body class="landing">
 
+<script>
+$(document).ready(function(){
+$('#landing').hide();
+$(document).click(function () {
+    $('#splashscreen').fadeOut();
+	$('#landing').fadeIn(2000);
+});
+});
+</script>
+
+<body class="landing">
 	<!-- Header -->
+		<div id="splashscreen">
+	<section class="box special" >
+    <h2 style="text-align:center;">Welcome !</h2>
+    <h3 style="text-align:center">This is my revision and projects website. Click anywhere to begin!</h3>
+	<img src="images/book.JPG" style="width:100%"/>
+	</section>
+</div>
+
+	<div id="landing">
 	<header id="header" class="alt">
 		<h1><a href="index.html">Pi</a> by R.I.G Studios</h1>
 		<nav id="nav">
@@ -72,8 +91,10 @@
 		<h2>Pi</h2>
 		<p>A webpage dedicated to testing and learning ideas.</p>
 		<ul class="actions">
+			<!--
 			<li><a href="#" class="button special">Sign Up</a></li>
 			<li><a href="#" class="button">Learn More</a></li>
+			-->
 		</ul>
 	</section>
 
@@ -82,7 +103,7 @@
 
 		<section class="box special">
 			<header class="major">
-				<audio controls><source src="assets/Song For Zula.mp3" /></audio>
+			<!--<audio controls><source src="assets/Song For Zula.mp3" /></audio>-->
 				<h2>Introducing my ultimate Arduino robot
 					<br />
 					with wireless communication</h2>
@@ -125,7 +146,7 @@
 
 						<section class="box special">
 							<span class="image featured"><img src="images/image1.jpg" height="auto" alt="" /></span>
-							<h3>Alan Turning</h3>
+							<h3>Alan Turing</h3>
 							<p>Learn all about the remarkable individual who won the second world war due to cracking the German enigma.</p>
 							<ul class="actions">
 								<li><a href="Alan.html" class="button alt">Learn More</a></li>
@@ -155,13 +176,13 @@
 				<h2>Sign up</h2>
 				<p>Sign up basically because you have nothing better to do.</p>
 
-				<form>
+				<form name="formx">
 					<div class="row uniform 50%">
 						<div class="8u 12u(mobilep)">
 							<input type="email" name="email" id="email" placeholder="Email Address" />
 						</div>
 						<div class="4u 12u(mobilep)">
-							<input type="submit" value="Sign Up" class="fit" onclick="alert('Thank you, Please wait...');alert('One Trojan horse virus on the way...')"/>
+							<input type="submit" value="Sign Up" class="fit" onclick="alert('Thank you, Please wait...');alert('One Trojan horse virus on the way...Sent to ' + document.formx.email.value)"/>
 						</div>
 					</div>
 				</form>
@@ -180,6 +201,6 @@
 				</ul>
 
 			</footer>
-			
+			</div>
 		</body>
 		</html>
