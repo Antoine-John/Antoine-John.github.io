@@ -1,10 +1,6 @@
-var morse;
-var trans = [];
-
-var english;
-var trans2 = [];
-
 function translating(){
+	var morse;
+	var trans = [];
 	var code = document.form1.message.value;
 	var translates = code.split(" ");
 	var head1 = document.getElementById("head1");
@@ -115,21 +111,35 @@ function translating(){
 			case "--..":
 			trans[i] = "z";
 			break;
+			
+			case "...-.":
+			trans[i] = "understood";
+			break;
+			
+			case "|":
+			trans[i] =" ";
+			break;
+			default:
+			break;
 
 		}
 	}
-	head1.firstChild.nodeValue=trans;
+	var final = trans.join("");
+	
+	head1.firstChild.nodeValue=final;
 }
 
 
 function translating2(){
+	var english;
+	var trans2 = [];
 	var code2 = document.form1.message2.value;
 	var translates2 = code2.split("");
 	var head2 = document.getElementById("head2");
 	for (var i2 = 0; i2 < translates2.length; i2++){
 		english = translates2[i2];
 
-		switch (english){
+		switch (english.toLowerCase()){
 			case "a":
 			trans2[i2] =".-";
 			break;
@@ -240,6 +250,6 @@ function translating2(){
 
 		}
 	}
-	head2.firstChild.nodeValue=trans2;
+	head2.firstChild.nodeValue=trans2.join(" ");
 }
 
